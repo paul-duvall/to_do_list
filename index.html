@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Dawning+of+a+New+Day|Euphoria+Script" rel="stylesheet">
+  <title>A handy little to-do list!</title>
+</head>
+<body>
+  <div id="to-do-list">
+
+    <header>
+      <h1>A handy little to-do list!</h1>
+      <p>What do you need to do today?</p>
+      <p>List your jobs and tasks right here. And then do them!</p>
+    </header>
+
+    <section>
+      <form action="#" id="input-form">
+        <input type = "text" id = "task-input" value = "New task" onfocus="this.value=''" onblur = "'New task'"><br>
+        <input type = "submit" value="Add task" id = "add-task-button" >
+      </form>
+    </section> <!-- End of the input form section -->
+
+    <section id = "task-list-main">
+      <h2>Tasks</h2>
+      <ul id = "task-list"></ul>
+    </section>
+  </div>
+
+  <script src="javascript.js"></script>
+</body>
+</html>
