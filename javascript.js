@@ -12,6 +12,8 @@ callEventListeners();
 function callEventListeners() {
   // Add task event
   inputForm.addEventListener('submit', addTask);
+  // Delete task event
+  taskList.addEventListener('click', removeTask);
 }
 
 function addTask(e) {
@@ -27,15 +29,26 @@ function addTask(e) {
   li.className = 'task-list-item';
   // Create a text node and append to the li
   li.appendChild(document.createTextNode(taskInput.value));
-  
-  // Append the li to the list
+    // Append the li to the list
   taskList.appendChild(li);
+
+  // Create a link element for the delete button
+  const link = document.createElement('a');
+  // Add class to link
+  link.classList = 'item-delete';
+  // Add html into link
+  link.innerHTML = '<img src="images/delete-button.svg" width=22px>'
+  // Append the link to the list item
+  li.appendChild(link);
 
   // Clear the input field
   taskInput.value = '';
 
-
-  console.log(li);
-
   e.preventDefault();
+}
+
+function removeTask(e) {
+  if(e.target.parentElement.classList.contains('item-delete')){
+    e.target.parentElement.parentElement.remove();
+  }
 }
